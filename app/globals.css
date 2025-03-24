@@ -63,9 +63,23 @@
   }
 }
 
+html,
 body {
-  @apply bg-gradient-to-br from-blue-50/80 via-sky-50/80 to-blue-100/80 dark:from-blue-950/80 dark:via-slate-900/80 dark:to-slate-950/80 min-h-screen;
+  min-height: 100%;
+  background-color: inherit;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-start-rgb);
   background-attachment: fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background-dark-rgb);
+  }
 }
 
 .podium-card {
