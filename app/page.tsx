@@ -9,9 +9,9 @@ export default function Home() {
 
       <main className="mt-16 mb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-medium text-primary mb-4">Cards Tournament</h1>
+          <h1 className="text-4xl md:text-5xl font-medium mb-4">Liga SuecUM</h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-            Track standings, upcoming matches, and results.
+            Acompanha classificações, jogos futuros e resultados.
           </p>
         </div>
 
@@ -22,8 +22,8 @@ export default function Home() {
                 <Trophy className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-medium mb-1">Leaderboard</h2>
-                <p className="text-slate-600 dark:text-slate-300 text-sm">Check who's leading the tournament.</p>
+                <h2 className="text-xl font-medium mb-1">Classificação</h2>
+                <p className="text-slate-600 dark:text-slate-300 text-sm">Vê quem lidera o torneio.</p>
               </div>
             </div>
           </Link>
@@ -34,9 +34,9 @@ export default function Home() {
                 <Calendar className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-medium mb-1">Scheduled Games</h2>
+                <h2 className="text-xl font-medium mb-1">Jogos Agendados</h2>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
-                  View upcoming matches and their timeframes.
+                  Consulta os próximos jogos e seus horários.
                 </p>
               </div>
             </div>
@@ -48,8 +48,8 @@ export default function Home() {
                 <Clock className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-medium mb-1">Past Games</h2>
-                <p className="text-slate-600 dark:text-slate-300 text-sm">Review completed matches and results.</p>
+                <h2 className="text-xl font-medium mb-1">Jogos Anteriores</h2>
+                <p className="text-slate-600 dark:text-slate-300 text-sm">Revê jogos concluídos e resultados.</p>
               </div>
             </div>
           </Link>

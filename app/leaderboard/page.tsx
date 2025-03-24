@@ -20,8 +20,8 @@ export default function Leaderboard() {
 
       <main className="mt-16 mb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-medium text-primary mb-4">Leaderboard</h1>
-          <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto">Current standings based on points.</p>
+          <h1 className="text-4xl font-medium mb-4">Classificação</h1>
+          <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto">Classificação atual baseada em pontos.</p>
         </div>
 
         {/* Top 3 Podium */}
@@ -33,8 +33,8 @@ export default function Leaderboard() {
                 <Medal className="w-8 h-8 text-gray-600" />
               </div>
               <h3 className="text-lg font-medium">{teams[1].name}</h3>
-              <p className="text-3xl font-bold text-primary">{teams[1].points}</p>
-              <p className="text-sm text-slate-600 dark:text-slate-300">points</p>
+              <p className="text-3xl font-bold">{teams[1].points}</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-20 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
           </div>
@@ -46,8 +46,8 @@ export default function Leaderboard() {
                 <Trophy className="w-10 h-10 text-yellow-500" />
               </div>
               <h3 className="text-xl font-medium">{teams[0].name}</h3>
-              <p className="text-4xl font-bold text-primary">{teams[0].points}</p>
-              <p className="text-sm text-slate-600 dark:text-slate-300">points</p>
+              <p className="text-4xl font-bold">{teams[0].points}</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-28 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
           </div>
@@ -59,8 +59,8 @@ export default function Leaderboard() {
                 <Award className="w-7 h-7 text-amber-700" />
               </div>
               <h3 className="text-lg font-medium">{teams[2].name}</h3>
-              <p className="text-2xl font-bold text-primary">{teams[2].points}</p>
-              <p className="text-sm text-slate-600 dark:text-slate-300">points</p>
+              <p className="text-2xl font-bold">{teams[2].points}</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-16 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
           </div>
@@ -72,12 +72,12 @@ export default function Leaderboard() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-slate-200/50 dark:border-slate-700/50 bg-white/20 dark:bg-slate-800/20">
-                  <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Rank</th>
-                  <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Team</th>
-                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Points</th>
-                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">W</th>
-                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">L</th>
+                  <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Posição</th>
+                  <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Equipa</th>
+                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Pontos</th>
+                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">V</th>
                   <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">D</th>
+                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">E</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,7 +90,7 @@ export default function Leaderboard() {
                   >
                     <td className="py-3 px-4 font-medium">{index + 1}</td>
                     <td className="py-3 px-4 font-medium">{team.name}</td>
-                    <td className="py-3 px-4 text-center font-bold text-primary">{team.points}</td>
+                    <td className="py-3 px-4 text-center font-bold">{team.points}</td>
                     <td className="py-3 px-4 text-center">{team.wins}</td>
                     <td className="py-3 px-4 text-center">{team.losses}</td>
                     <td className="py-3 px-4 text-center">{team.draws}</td>

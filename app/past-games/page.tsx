@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation"
 const journeys = [
   {
     id: 1,
-    title: "1st journey : 1st march - 9th march",
+    title: "1ª jornada: 1 de março - 9 de março",
     games: [
       {
         id: 1,
@@ -38,7 +38,7 @@ const journeys = [
   },
   {
     id: 2,
-    title: "2nd journey : 10th march - 20th march",
+    title: "2ª jornada: 10 de março - 20 de março",
     games: [
       {
         id: 5,
@@ -72,7 +72,7 @@ const journeys = [
   },
   {
     id: 3,
-    title: "3rd journey : 21st march - 30th march",
+    title: "3ª jornada: 21 de março - 30 de março",
     games: [
       {
         id: 9,
@@ -108,14 +108,14 @@ const journeys = [
 
 export default function PastGames() {
   return (
-    <div className="container mx-auto px-4 py-8 bg-white dark:bg-slate-900 min-h-screen">
+    <div className="container mx-auto px-4 py-8 min-h-screen">
       <Navigation />
 
       <main className="mt-16 mb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-medium text-primary mb-4">Past Games</h1>
+          <h1 className="text-4xl font-medium mb-4">Jogos Anteriores</h1>
           <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-            Review completed matches and their results.
+            Revê jogos concluídos e seus resultados.
           </p>
         </div>
 

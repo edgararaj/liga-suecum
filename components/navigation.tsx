@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Home, Trophy, Calendar, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -12,17 +12,17 @@ export default function Navigation() {
   const pathname = usePathname()
 
   const routes = [
-    { name: "Home", path: "/" },
-    { name: "Leaderboard", path: "/leaderboard" },
-    { name: "Scheduled Games", path: "/scheduled-games" },
-    { name: "Past Games", path: "/past-games" },
+    { name: "Início", path: "/", icon: Home },
+    { name: "Classificação", path: "/leaderboard", icon: Trophy },
+    { name: "Jogos Agendados", path: "/scheduled-games", icon: Calendar },
+    { name: "Jogos Anteriores", path: "/past-games", icon: Clock },
   ]
 
   return (
     <header className="py-6">
       <nav className="flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <span className="text-xl font-medium text-primary">CardTourney</span>
+        <Link href="/" className="flex items-center gap-2">
+          <span className="font-medium text-lg">Liga SuecUM</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -32,12 +32,13 @@ export default function Navigation() {
               key={route.path}
               href={route.path}
               className={cn(
-                "px-4 py-2 rounded-full text-sm transition-colors",
+                "px-4 py-2 rounded-full text-sm transition-colors flex items-center gap-2",
                 pathname === route.path
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-slate-600 dark:text-slate-300 hover:bg-white/20 dark:hover:bg-white/5",
               )}
             >
+              {route.icon && <route.icon className="h-4 w-4" />}
               {route.name}
             </Link>
           ))}
@@ -58,13 +59,14 @@ export default function Navigation() {
                 key={route.path}
                 href={route.path}
                 className={cn(
-                  "px-4 py-2 rounded-full text-sm transition-colors",
+                  "px-4 py-2 rounded-full text-sm transition-colors flex items-center gap-2",
                   pathname === route.path
                     ? "bg-primary/10 text-primary font-medium"
                     : "text-slate-600 dark:text-slate-300 hover:bg-white/20 dark:hover:bg-white/5",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >
+                {route.icon && <route.icon className="h-4 w-4" />}
                 {route.name}
               </Link>
             ))}

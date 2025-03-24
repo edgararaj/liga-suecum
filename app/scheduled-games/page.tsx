@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation"
 const journeys = [
   {
     id: 1,
-    title: "1st journey : 1st april - 9th april",
+    title: "1ª jornada: 1 de abril - 9 de abril",
     games: [
       {
         id: 1,
@@ -30,7 +30,7 @@ const journeys = [
   },
   {
     id: 2,
-    title: "2nd journey : 10th april - 20th april",
+    title: "2ª jornada: 10 de abril - 20 de abril",
     games: [
       {
         id: 5,
@@ -56,7 +56,7 @@ const journeys = [
   },
   {
     id: 3,
-    title: "3rd journey : 21st april - 30th april",
+    title: "3ª jornada: 21 de abril - 30 de abril",
     games: [
       {
         id: 9,
@@ -84,14 +84,14 @@ const journeys = [
 
 export default function ScheduledGames() {
   return (
-    <div className="container mx-auto px-4 py-8 bg-white dark:bg-slate-900 min-h-screen">
+    <div className="container mx-auto px-4 py-8 min-h-screen">
       <Navigation />
 
       <main className="mt-16 mb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-medium text-primary mb-4">Scheduled Games</h1>
+          <h1 className="text-4xl font-medium mb-4">Jogos Agendados</h1>
           <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-            View upcoming matches and their timeframes.
+            Consulta os próximos jogos e seus períodos.
           </p>
         </div>
 
