@@ -72,7 +72,6 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
   background-attachment: fixed;
 }
 
