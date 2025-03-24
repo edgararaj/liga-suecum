@@ -1,23 +1,31 @@
 [
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "1 de abril",
+    "endDate": "9 de abril",
     "games": [
       {
         "team1": "NEBQUM",
-        "team2": "NEFUM"
+        "team2": "NEFUM",
+        "score1": 3,
+        "score2": 1
       },
       {
         "team1": "AEPUM",
-        "team2": "ELSA UMINHO"
+        "team2": "ELSA UMINHO",
+        "score1": 3,
+        "score2": 2
       },
       {
         "team1": "Aelliteum",
-        "team2": "NUMERUM"
+        "team2": "NUMERUM",
+        "score1": 0,
+        "score2": 3
       },
       {
         "team1": "CeSIUM",
-        "team2": "NEBAUM"
+        "team2": "NEBAUM",
+        "score1": 1,
+        "score2": 0
       },
       {
         "team": "NECC",
@@ -26,16 +34,20 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "10 de abril",
+    "endDate": "20 de abril",
     "games": [
       {
         "team1": "NECC",
-        "team2": "NEFUM"
+        "team2": "NEFUM",
+        "score1": 2,
+        "score2": 1
       },
       {
         "team1": "NEBQUM",
-        "team2": "NUMERUM"
+        "team2": "NUMERUM",
+        "score1": 1,
+        "score2": 3
       },
       {
         "team1": "AEPUM",
@@ -52,8 +64,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "21 de abril",
+    "endDate": "30 de abril",
     "games": [
       {
         "team1": "NECC",
@@ -78,8 +90,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "1 de maio",
+    "endDate": "9 de maio",
     "games": [
       {
         "team1": "NECC",
@@ -104,8 +116,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "10 de maio",
+    "endDate": "20 de maio",
     "games": [
       {
         "team1": "NECC",
@@ -130,8 +142,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "21 de maio",
+    "endDate": "30 de maio",
     "games": [
       {
         "team1": "NECC",
@@ -156,8 +168,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "1 de junho",
+    "endDate": "9 de junho",
     "games": [
       {
         "team1": "NECC",
@@ -182,8 +194,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "10 de junho",
+    "endDate": "20 de junho",
     "games": [
       {
         "team1": "NECC",
@@ -208,8 +220,8 @@
     ]
   },
   {
-    "startDate": "<to be filled>",
-    "endDate": "<to be filled>",
+    "startDate": "21 de junho",
+    "endDate": "30 de junho",
     "games": [
       {
         "team1": "NECC",

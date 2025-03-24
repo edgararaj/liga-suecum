@@ -1,19 +1,113 @@
+import fs from 'fs';
+import path from 'path';
 import Navigation from "@/components/navigation"
 import { Trophy, Medal, Award } from "lucide-react"
+import { Game, Journey, TeamStats } from "../types/schedule";
 
-// Mock data for the leaderboard
-const teams = [
-  { id: 1, name: "Ace Spades", points: 28, wins: 9, losses: 2, draws: 1 },
-  { id: 2, name: "Royal Flush", points: 25, wins: 8, losses: 3, draws: 1 },
-  { id: 3, name: "Card Sharks", points: 22, wins: 7, losses: 4, draws: 1 },
-  { id: 4, name: "Deck Masters", points: 19, wins: 6, losses: 5, draws: 1 },
-  { id: 5, name: "Wild Jokers", points: 16, wins: 5, losses: 6, draws: 1 },
-  { id: 6, name: "Full House", points: 13, wins: 4, losses: 7, draws: 1 },
-  { id: 7, name: "Diamond Kings", points: 10, wins: 3, losses: 8, draws: 1 },
-  { id: 8, name: "Heart Breakers", points: 7, wins: 2, losses: 9, draws: 1 },
-]
+// Tipos para os dados
+interface Game {
+  team1: string;
+  team2: string;
+  score1?: number;
+  score2?: number;
+  bye?: boolean;
+  team?: string;
+}
+
+interface Journey {
+  startDate: string;
+  endDate: string;
+  games: Game[];
+}
+
+interface JourneyResult {
+  journeyIndex: number;
+  games: Game[];
+}
+
+interface TeamStats {
+  id: string;
+  name: string;
+  points: number;
+  wins: number;
+  losses: number;
+  pointsScored: number;
+  pointsConceded: number;
+}
 
 export default function Leaderboard() {
+  // Carregar dados do calendário com resultados
+  const schedulePath = path.join(process.cwd(), 'public', 'tournament_schedule.json');
+  const scheduleContents = fs.readFileSync(schedulePath, 'utf8');
+  const journeys: Journey[] = JSON.parse(scheduleContents);
+  
+  // Extrair todos os nomes de equipes únicos
+  const teamNames = new Set<string>();
+  journeys.forEach(journey => {
+    journey.games.forEach(game => {
+      if ('team1' in game) {
+        teamNames.add(game.team1);
+        teamNames.add(game.team2);
+      } else if ('team' in game) {
+        teamNames.add(game.team);
+      }
+    });
+  });
+  
+  // Inicializar estatísticas para cada equipe
+  const teamStats: Record<string, TeamStats> = {};
+  Array.from(teamNames).forEach(name => {
+    teamStats[name] = {
+      id: name,
+      name,
+      points: 0,
+      wins: 0,
+      losses: 0,
+      pointsScored: 0,
+      pointsConceded: 0
+    };
+  });
+  
+  // Calcular estatísticas com base nos resultados
+  journeys.forEach(journey => {
+    journey.games.forEach(game => {
+      if ('team1' in game && game.score1 !== undefined && game.score2 !== undefined) {
+        // Adicionar pontos marcados e sofridos
+        teamStats[game.team1].pointsScored += game.score1;
+        teamStats[game.team1].pointsConceded += game.score2;
+        teamStats[game.team2].pointsScored += game.score2;
+        teamStats[game.team2].pointsConceded += game.score1;
+        
+        // Vitória time 1
+        if (game.score1 > game.score2) {
+          teamStats[game.team1].points += 3;
+          teamStats[game.team1].wins += 1;
+          teamStats[game.team2].losses += 1;
+        }
+        // Vitória time 2
+        else if (game.score1 < game.score2) {
+          teamStats[game.team2].points += 3;
+          teamStats[game.team2].wins += 1;
+          teamStats[game.team1].losses += 1;
+        }
+      }
+    });
+  });
+  
+  // Converter para array e ordenar por pontos, depois por pontos marcados, depois por pontos sofridos (inverso)
+  const teams = Object.values(teamStats).sort((a, b) => {
+    // Primeiro critério: pontos
+    if (b.points !== a.points) {
+      return b.points - a.points;
+    }
+    // Segundo critério: pontos marcados
+    if (b.pointsScored !== a.pointsScored) {
+      return b.pointsScored - a.pointsScored;
+    }
+    // Terceiro critério: pontos sofridos (menos é melhor)
+    return a.pointsConceded - b.pointsConceded;
+  });
+
   return (
     <div className="container mx-auto px-4 py-8">
       <Navigation />
@@ -30,10 +124,10 @@ export default function Leaderboard() {
           <div className="w-full md:w-1/3 order-2 md:order-1">
             <div className="glassmorphism-strong podium-card rounded-t-xl h-[180px] flex flex-col items-center justify-end p-4 silver-gradient bg-opacity-10">
               <div className="w-16 h-16 rounded-full bg-white/30 flex items-center justify-center mb-2 border border-white/50">
-                <Medal className="w-8 h-8 text-gray-600" />
+                <Medal className="w-8 h-8 text-gray-400" />
               </div>
-              <h3 className="text-lg font-medium">{teams[1].name}</h3>
-              <p className="text-3xl font-bold">{teams[1].points}</p>
+              <h3 className="text-lg font-medium">{teams[1]?.name || "—"}</h3>
+              <p className="text-3xl font-bold">{teams[1]?.points || 0}</p>
               <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-20 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
@@ -45,8 +139,8 @@ export default function Leaderboard() {
               <div className="w-20 h-20 rounded-full bg-white/30 flex items-center justify-center mb-2 border border-white/50">
                 <Trophy className="w-10 h-10 text-yellow-500" />
               </div>
-              <h3 className="text-xl font-medium">{teams[0].name}</h3>
-              <p className="text-4xl font-bold">{teams[0].points}</p>
+              <h3 className="text-xl font-medium">{teams[0]?.name || "—"}</h3>
+              <p className="text-4xl font-bold">{teams[0]?.points || 0}</p>
               <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-28 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
@@ -58,8 +152,8 @@ export default function Leaderboard() {
               <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center mb-2 border border-white/50">
                 <Award className="w-7 h-7 text-amber-700" />
               </div>
-              <h3 className="text-lg font-medium">{teams[2].name}</h3>
-              <p className="text-2xl font-bold">{teams[2].points}</p>
+              <h3 className="text-lg font-medium">{teams[2]?.name || "—"}</h3>
+              <p className="text-2xl font-bold">{teams[2]?.points || 0}</p>
               <p className="text-sm text-slate-600 dark:text-slate-300">pontos</p>
             </div>
             <div className="h-16 bg-slate-300/50 dark:bg-slate-700/30 rounded-b-xl border-t-0 border border-white/30 dark:border-white/10"></div>
@@ -67,7 +161,7 @@ export default function Leaderboard() {
         </div>
 
         {/* Full Standings Table */}
-        <div className="max-w-2xl mx-auto glassmorphism rounded-xl overflow-hidden">
+        <div className="max-w-3xl mx-auto glassmorphism rounded-xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -75,9 +169,10 @@ export default function Leaderboard() {
                   <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Posição</th>
                   <th className="text-left py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Equipa</th>
                   <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">Pontos</th>
+                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">PM</th>
+                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">PS</th>
                   <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">V</th>
                   <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">D</th>
-                  <th className="text-center py-3 px-4 font-medium text-slate-500 dark:text-slate-400">E</th>
                 </tr>
               </thead>
               <tbody>
@@ -91,13 +186,19 @@ export default function Leaderboard() {
                     <td className="py-3 px-4 font-medium">{index + 1}</td>
                     <td className="py-3 px-4 font-medium">{team.name}</td>
                     <td className="py-3 px-4 text-center font-bold">{team.points}</td>
+                    <td className="py-3 px-4 text-center">{team.pointsScored}</td>
+                    <td className="py-3 px-4 text-center">{team.pointsConceded}</td>
                     <td className="py-3 px-4 text-center">{team.wins}</td>
                     <td className="py-3 px-4 text-center">{team.losses}</td>
-                    <td className="py-3 px-4 text-center">{team.draws}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          
+          {/* Legenda */}
+          <div className="p-4 text-sm text-slate-500 dark:text-slate-400 bg-white/10 dark:bg-slate-800/10 border-t border-slate-200/30 dark:border-slate-700/30">
+            <p>PM: Pontos Marcados | PS: Pontos Sofridos | V: Vitórias | D: Derrotas</p>
           </div>
         </div>
       </main>

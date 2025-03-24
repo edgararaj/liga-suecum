@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import Navigation from "@/components/navigation";
-import { Journey } from '../types/schedule';
+import { Game, Journey } from "../types/schedule";
 
 export default function ScheduledGames() {
-  // Load the data server-side
-  const jsonPath = path.join(process.cwd(), 'public', 'tournament_schedule.json');
-  const fileContents = fs.readFileSync(jsonPath, 'utf8');
-  const journeys: Journey[] = JSON.parse(fileContents);
+  // Carregar dados do calendário com resultados
+  const schedulePath = path.join(process.cwd(), 'public', 'tournament_schedule.json');
+  const scheduleContents = fs.readFileSync(schedulePath, 'utf8');
+  const journeys: Journey[] = JSON.parse(scheduleContents);
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
@@ -25,10 +25,7 @@ export default function ScheduledGames() {
           {journeys.map((journey, journeyIndex) => (
             <div key={journeyIndex} className="flex flex-col items-center">
               <h2 className="text-xl font-medium mb-10 text-center">
-                {`${getOrdinal(journeyIndex + 1)} journey`}
-                {journey.startDate !== "<to be filled>" && (
-                  <span> : {journey.startDate} - {journey.endDate}</span>
-                )}
+                {`${journeyIndex + 1}ª jornada: ${journey.startDate} - ${journey.endDate}`}
               </h2>
 
               <div className="w-full max-w-md space-y-6">
@@ -51,7 +48,7 @@ export default function ScheduledGames() {
                     {'bye' in game && (
                       <div className="bg-slate-100 dark:bg-slate-700 rounded-full py-4 px-6 flex items-center justify-between text-slate-500 dark:text-slate-400">
                         <div className="text-base font-medium w-2/3 text-left">{game.team}</div>
-                        <div className="text-sm w-1/3 text-right">Not playing this journey</div>
+                        <div className="text-sm w-1/3 text-right">Não joga nesta jornada</div>
                       </div>
                     )}
                   </div>
@@ -63,12 +60,5 @@ export default function ScheduledGames() {
       </main>
     </div>
   );
-}
-
-// Helper function to get ordinal suffix for journey numbers
-function getOrdinal(n: number): string {
-  const suffixes = ['th', 'st', 'nd', 'rd'];
-  const v = n % 100;
-  return n + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
 }
 
