@@ -1,0 +1,236 @@
+[
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NEBQUM",
+        "team2": "NEFUM"
+      },
+      {
+        "team1": "AEPUM",
+        "team2": "ELSA UMINHO"
+      },
+      {
+        "team1": "Aelliteum",
+        "team2": "NUMERUM"
+      },
+      {
+        "team1": "CeSIUM",
+        "team2": "NEBAUM"
+      },
+      {
+        "team": "NECC",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "NEFUM"
+      },
+      {
+        "team1": "NEBQUM",
+        "team2": "NUMERUM"
+      },
+      {
+        "team1": "AEPUM",
+        "team2": "NEBAUM"
+      },
+      {
+        "team1": "Aelliteum",
+        "team2": "CeSIUM"
+      },
+      {
+        "team": "ELSA UMINHO",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "ELSA UMINHO"
+      },
+      {
+        "team1": "NEFUM",
+        "team2": "NUMERUM"
+      },
+      {
+        "team1": "NEBQUM",
+        "team2": "CeSIUM"
+      },
+      {
+        "team1": "AEPUM",
+        "team2": "Aelliteum"
+      },
+      {
+        "team": "NEBAUM",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "NUMERUM"
+      },
+      {
+        "team1": "ELSA UMINHO",
+        "team2": "NEBAUM"
+      },
+      {
+        "team1": "NEFUM",
+        "team2": "CeSIUM"
+      },
+      {
+        "team1": "NEBQUM",
+        "team2": "AEPUM"
+      },
+      {
+        "team": "Aelliteum",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "NEBAUM"
+      },
+      {
+        "team1": "NUMERUM",
+        "team2": "CeSIUM"
+      },
+      {
+        "team1": "ELSA UMINHO",
+        "team2": "Aelliteum"
+      },
+      {
+        "team1": "NEFUM",
+        "team2": "AEPUM"
+      },
+      {
+        "team": "NEBQUM",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "CeSIUM"
+      },
+      {
+        "team1": "NEBAUM",
+        "team2": "Aelliteum"
+      },
+      {
+        "team1": "NUMERUM",
+        "team2": "AEPUM"
+      },
+      {
+        "team1": "ELSA UMINHO",
+        "team2": "NEBQUM"
+      },
+      {
+        "team": "NEFUM",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "Aelliteum"
+      },
+      {
+        "team1": "CeSIUM",
+        "team2": "AEPUM"
+      },
+      {
+        "team1": "NEBAUM",
+        "team2": "NEBQUM"
+      },
+      {
+        "team1": "ELSA UMINHO",
+        "team2": "NEFUM"
+      },
+      {
+        "team": "NUMERUM",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "AEPUM"
+      },
+      {
+        "team1": "Aelliteum",
+        "team2": "NEBQUM"
+      },
+      {
+        "team1": "NEBAUM",
+        "team2": "NEFUM"
+      },
+      {
+        "team1": "NUMERUM",
+        "team2": "ELSA UMINHO"
+      },
+      {
+        "team": "CeSIUM",
+        "bye": true
+      }
+    ]
+  },
+  {
+    "startDate": "<to be filled>",
+    "endDate": "<to be filled>",
+    "games": [
+      {
+        "team1": "NECC",
+        "team2": "NEBQUM"
+      },
+      {
+        "team1": "Aelliteum",
+        "team2": "NEFUM"
+      },
+      {
+        "team1": "CeSIUM",
+        "team2": "ELSA UMINHO"
+      },
+      {
+        "team1": "NEBAUM",
+        "team2": "NUMERUM"
+      },
+      {
+        "team": "AEPUM",
+        "bye": true
+      }
+    ]
+  }
+]
