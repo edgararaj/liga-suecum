@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Home, Trophy, Calendar, Clock } from "lucide-react"
+import { Menu, X, Home, Trophy, Calendar, Clock, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -16,6 +16,7 @@ export default function Navigation() {
     { name: "Classificação", path: "/leaderboard", icon: Trophy },
     { name: "Jogos Agendados", path: "/scheduled-games", icon: Calendar },
     { name: "Jogos Anteriores", path: "/past-games", icon: Clock },
+    { name: "Regras", path: "/regras", icon: BookOpen },
   ]
 
   return (

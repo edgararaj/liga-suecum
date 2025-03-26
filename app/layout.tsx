@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Footer from "@/components/footer";
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -12,12 +13,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt">
-      <body className="min-h-screen bg-white dark:bg-slate-900">
-        {children}
-        <footer className="bg-gray-100 text-center py-4 text-sm text-gray-600 dark:bg-slate-800 dark:text-gray-300">
-          © NECC 2001-2025 | Developed with 💖
-        </footer>
+    <html lang="pt" className="h-full">
+      <body className="min-h-screen h-full bg-white dark:bg-slate-900 flex flex-col">
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )
