@@ -39,11 +39,15 @@
     "games": [
       {
         "team1": "NECC",
-        "team2": "NEFUM"
+        "team2": "NEFUM",
+        "score1": 4,
+        "score2": 0
       },
       {
         "team1": "NEBQUM",
-        "team2": "NUMERUM"
+        "team2": "NUMERUM",
+        "score1": 9,
+        "score2": 11
       },
       {
         "team1": "AEPUM",
@@ -51,7 +55,9 @@
       },
       {
         "team1": "Aelliteum",
-        "team2": "CeSIUM"
+        "team2": "CeSIUM",
+        "score1": 5,
+        "score2": 10
       },
       {
         "team": "ELSA UMINHO",
