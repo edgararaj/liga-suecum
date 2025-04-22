@@ -83,7 +83,9 @@
       },
       {
         "team1": "AEPUM",
-        "team2": "Aelliteum"
+        "team2": "Aelliteum",
+        "score1": 8,
+        "score2": 11
       },
       {
         "team": "NEBAUM",
