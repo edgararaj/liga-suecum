@@ -71,11 +71,15 @@
     "games": [
       {
         "team1": "NECC",
-        "team2": "ELSA UMINHO"
+        "team2": "ELSA UMINHO",
+        "score1": 10,
+        "score2": 6
       },
       {
         "team1": "NEFUM",
-        "team2": "NUMERUM"
+        "team2": "NUMERUM",
+        "score1": 0,
+        "score2": 4
       },
       {
         "team1": "NEBQUM",
@@ -99,7 +103,9 @@
     "games": [
       {
         "team1": "NECC",
-        "team2": "NUMERUM"
+        "team2": "NUMERUM",
+        "score1": 5,
+        "score2": 10
       },
       {
         "team1": "ELSA UMINHO",
@@ -107,7 +113,9 @@
       },
       {
         "team1": "NEFUM",
-        "team2": "CeSIUM"
+        "team2": "CeSIUM",
+        "score1": 0,
+        "score2": 4
       },
       {
         "team1": "NEBQUM",
@@ -129,7 +137,9 @@
       },
       {
         "team1": "NUMERUM",
-        "team2": "CeSIUM"
+        "team2": "CeSIUM",
+        "score1": 10,
+        "score2": 7
       },
       {
         "team1": "ELSA UMINHO",
@@ -137,7 +147,9 @@
       },
       {
         "team1": "NEFUM",
-        "team2": "AEPUM"
+        "team2": "AEPUM",
+        "score1": 0,
+        "score2": 4
       },
       {
         "team": "NEBQUM",
